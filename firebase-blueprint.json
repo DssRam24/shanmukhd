@@ -1,0 +1,90 @@
+{
+  "entities": {
+    "submissions": {
+      "title": "Submissions",
+      "description": "User shared routines, playlists, and quotes from interest card drop-downs.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The category of submission, e.g. playlist, fitness, quote."
+        },
+        "value": {
+          "type": "string",
+          "description": "The actual text content or link submitted."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the submitter."
+        },
+        "ts": {
+          "type": "number",
+          "description": "Timestamp of the submission."
+        }
+      },
+      "required": ["type", "value", "name", "ts"]
+    },
+    "suggestions": {
+      "title": "Suggestions",
+      "description": "User suggested books or movies to the read and watch queue.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The suggested title."
+        },
+        "why": {
+          "type": "string",
+          "description": "Reasoning behind why Shanmukh would enjoy it."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the suggester."
+        },
+        "type": {
+          "type": "string",
+          "description": "Either 'book' or 'movie'."
+        },
+        "ts": {
+          "type": "number",
+          "description": "Timestamp of the suggestion."
+        }
+      },
+      "required": ["title", "why", "name", "type", "ts"]
+    },
+    "notes": {
+      "title": "Notes",
+      "description": "Interactive sticky note feedback pinned by readers.",
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Sticky note message body."
+        },
+        "name": {
+          "type": "string",
+          "description": "Visitor name or anonymous nickname."
+        },
+        "ts": {
+          "type": "number",
+          "description": "Timestamp of the pin."
+        }
+      },
+      "required": ["text", "name", "ts"]
+    }
+  },
+  "firestore": {
+    "/submissions/{submissionId}": {
+      "schema": "submissions",
+      "description": "Contains user-submitted routines, lists, and playlist items."
+    },
+    "/suggestions/{suggestionId}": {
+      "schema": "suggestions",
+      "description": "Collection of visitor suggestions for books and movies."
+    },
+    "/notes/{noteId}": {
+      "schema": "notes",
+      "description": "Feedback notes showcased inside the visitor drawer pin board."
+    }
+  }
+}

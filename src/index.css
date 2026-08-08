@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&family=Noto+Sans+Telugu:wght@400;700&display=swap');
+
+@theme {
+  --font-sans: "Space Mono", monospace, system-ui;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "Space Mono", monospace;
+  --font-display: "Press Start 2P", monospace;
+  --font-cursive: "Caveat", cursive;
+}
+
+/* Custom CSS Keyframe Animations */
+@keyframes float-quote {
+  0% {
+    transform: translateY(0) rotateY(0deg) rotateX(25deg) scale(0.9);
+    opacity: 0;
+  }
+  6% {
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-55vh) rotateY(8deg) rotateX(0deg) scale(1);
+    opacity: 0.8;
+  }
+  94% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-115vh) rotateY(-5deg) rotateX(-20deg) scale(1.05);
+    opacity: 0;
+  }
+}
+
+.animate-float-quote {
+  animation-name: float-quote;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-zoom-in {
+  animation: zoom-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Base custom styles to respect custom cursor */
+html, body, button, a, div, input, textarea {
+  cursor: none !important;
+}
