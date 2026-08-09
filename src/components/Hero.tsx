@@ -230,7 +230,7 @@ export default function Hero() {
             {/* High-quality profile photo placeholder */}
             <div className="w-full h-full bg-neutral-900 flex items-center justify-center">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=500"
+                src="photo.png?auto=format&fit=crop&q=80&w=400&h=500"
                 alt="Shanmukha Sai Ram Donepudi"
                 className="w-full h-full object-cover grayscale brightness-105 contrast-105 hover:grayscale-0 transition-all duration-500"
               />
